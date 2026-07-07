@@ -4,32 +4,41 @@ esphome:
 esp32:
   board: esp32dev
 
+logger:
+
+api:
+
+ota:
+  - platform: esphome
+
+wifi:
+  ssid: "YOUR_WIFI_SSID"
+  password: "YOUR_WIFI_PASSWORD"
+
 i2c:
   sda: GPIO6
   scl: GPIO7
+  scan: true
 
 external_components:
   - source: github://kzd76/esphome-components
+    components: [veml6040]
 
 sensor:
   - platform: veml6040
     integration_time: 40ms
+    lux_compensation: 1.0
 
     red:
-      name: "Red"
-
+      name: "VEML6040 Red"
     green:
-      name: "Green"
-
+      name: "VEML6040 Green"
     blue:
-      name: "Blue"
-
+      name: "VEML6040 Blue"
     white:
-      name: "White"
-
+      name: "VEML6040 White"
     illuminance:
-      name: "Illuminance"
-
+      name: "VEML6040 Illuminance"
     color_temperature:
-      name: "Color Temperature"
+      name: "VEML6040 Color Temperature"
       cct_profile: open_air
