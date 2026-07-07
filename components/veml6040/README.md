@@ -18,7 +18,7 @@ The component supports both the raw sensor channels and derived measurements suc
 - Estimated correlated color temperature (CCT)
 - Custom calibration matrix for CCT
 
-![VEML6040 History](docs/history-graph.png)
+![VEML6040 History](../../docs/history-graph.png)
 
 ---
 
