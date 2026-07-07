@@ -1,0 +1,35 @@
+esphome:
+  name: veml6040-demo
+
+esp32:
+  board: esp32dev
+
+i2c:
+  sda: GPIO6
+  scl: GPIO7
+
+external_components:
+  - source: github://kzd76/esphome-components
+
+sensor:
+  - platform: veml6040
+    integration_time: 40ms
+
+    red:
+      name: "Red"
+
+    green:
+      name: "Green"
+
+    blue:
+      name: "Blue"
+
+    white:
+      name: "White"
+
+    illuminance:
+      name: "Illuminance"
+
+    color_temperature:
+      name: "Color Temperature"
+      cct_profile: open_air
